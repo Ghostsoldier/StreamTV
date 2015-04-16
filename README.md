@@ -1,2 +1,2 @@
 # StreamTV
-StreamTV is a Java-Application, which streams German TV by using VLC Player
+StreamTV ist eine Java-Application, die öffentlich rechtliche TV-Sender unter Zuhilfenahme von VLC-Player streamt.
