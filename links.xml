@@ -5,7 +5,7 @@
       ARD
       <Qualität>
         LD
-        <Auflösung>960x546</Auflösung>
+        <Resolution>960x546</Resolution>
         <Link>http://daserste_live-lh.akamaihd.net/i/daserste_de@91204/master.m3u8</Link>
       </Qualität>
     </Sender>
@@ -13,15 +13,15 @@
       ZDF
       <Qualität>
         LD
-        <Auflösung>864x482</Auflösung>
+        <Resolution>864x482</Resolution>
         <Link>http://zdf_hds_de-f.akamaihd.net/i/de14_v1@147090/master.m3u8</Link>
       </Qualität>
     </Sender>
     <Sender>
-      BBC World News
+      BBC World
       <Qualität>
         LD
-        <Auflösung>720x418</Auflösung>
+        <Resolution>720x418</Resolution>
         <Link>http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_world/ls_satlink/b_,264,528,828,.m3u8</Link>
       </Qualität>
     </Sender>
@@ -29,10 +29,239 @@
       CNN International
       <Qualität>
         LD
-        <Auflösung>720x418</Auflösung>
+        <Resolution>720x418</Resolution>
         <Link>http://wpc.c1a9.edgecastcdn.net/hls-live/20C1A9/cnn/ls_satlink/b_528.m3u8</Link>
       </Qualität>
     </Sender>
+	<Sender>
+      Arirang
+      <Qualität>
+        HD
+        <Resolution>1280x738</Resolution>
+        <Link>http://worldlive-ios.arirang.co.kr/arirang/arirangtvworldios.mp4.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      ABC News
+      <Qualität>
+        LD
+        <Resolution>640x386</Resolution>
+        <Link>http://abclive.abcnews.com/i/abc_live4@136330/master.m3u8?b=500,300,700,900,1200</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      CNBC
+      <Qualität>
+        LD
+        <Resolution>640x386</Resolution>
+        <Link>http://origin2.live.web.tv.streamprovider.net/streams/3bc166ba3776c04e987eb242710e75c0/index.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      RT English
+      <Qualität>
+        HD
+        <Resolution>1280x738</Resolution>
+        <Link>http://odna.octoshape.net/f3f5m2v4/cds/smil:ch1_auto.smil/playlist.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      RT Documentaries
+      <Qualität>
+        HD
+        <Resolution>1280x738</Resolution>
+        <Link>http://odna.octoshape.net/f3f5m2v4/cds/smil:ch5_auto.smil/playlist.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      RT America
+      <Qualität>
+        HD
+        <Resolution>1280x738</Resolution>
+        <Link>http://odna.octoshape.net/f3f5m2v4/cds/smil:ch4_auto.smil/playlist.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      Reuters
+      <Qualität>
+        LD
+        <Resolution>768x450</Resolution>
+        <Link>http://37.58.85.156/rlo001/ngrp:rlo001.stream_all/playlist.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      Bloomberg
+      <Qualität>
+        LD
+        <Resolution>640x386</Resolution>
+        <Link>http://live.bltvios.com.edgesuite.net/tv/us/master.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      eNCA
+      <Qualität>
+        LD
+        <Resolution>720x418</Resolution>
+        <Link>http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/enca/ls_satlink/b_,264,528,828,.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      Sky News International
+      <Qualität>
+        LD
+        <Resolution>720x418</Resolution>
+        <Link>http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/skynews/ls_satlink/b_,264,528,828,.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      Deutsche Welle
+      <Qualität>
+        LD
+        <Resolution>720x578</Resolution>
+        <Link>http://www.metafilegenerator.de/DWelle/tv/ios/master.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      Deutsche Welle North America
+      <Qualität>
+        LD
+        <Resolution>720x578</Resolution>
+        <Link>http://www.metafilegenerator.de/DWelle/tv-northamerica/ios/master.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      CCTV News
+      <Qualität>
+        LD
+        <Resolution>640x386</Resolution>
+        <Link>http://origin2.live.web.tv.streamprovider.net/streams/877ba7a57aa68fd898b838f58d51a69f/index.m3u8</Link>
+      </Qualität>
+    </Sender>
+	<Sender>
+      Tagesschau 24
+      <Qualität>
+        HD
+        <Resolution>1280x738</Resolution>
+        <Link>http://tagesschau-lh.akamaihd.net/i/tagesschau_1@119231/master.m3u8</Link>
+      </Qualität>
+    </Sender>
   </Fernsehen>
-  <Radio />
+  <Radio>
+	<Sender>
+		Antenne Bayern
+		<Link>http://www.antenne.de/webradio/antenne.m3u</Link>
+	</Sender>
+	<Sender>
+		Rock Antenne
+		<Link>http://www.rockantenne.de/webradio/rockantenne.m3u</Link>
+	</Sender>
+	<Sender>
+		Antenne Oldies but Goldies
+		<Link>http://www.antenne.de/webradio/channels/oldies-but-goldies.m3u </Link>
+	</Sender>
+	<Sender>
+		Antenne Chillout
+		<Link>http://www.antenne.de/webradio/channels/chillout.m3u</Link>
+	</Sender>
+	<Sender>
+		Antenne Top 40
+		<Link>http://www.antenne.de/webradio/channels/top-40.m3u</Link>
+	</Sender>
+	<Sender>
+		Antenne New Hits
+		<Link>http://www.antenne.de/webradio/channels/new-hits.m3u</Link>
+	</Sender>
+	<Sender>
+		Antenne Lovesongs
+		<Link>http://www.antenne.de/webradio/channels/lovesongs.m3u</Link>
+	</Sender>
+	<Sender>
+		Antenne Black Beatz
+		<Link>http://www.antenne.de/webradio/channels/black-beatz.m3u</Link>
+	</Sender>
+	<Sender>
+		Antenne 80-er Kulthits
+		<Link>http://www.antenne.de/webradio/channels/80er-kulthits.m3u</Link>
+	</Sender>
+	<Sender>
+		Antenne 90-er Hits
+		<Link>http://www.antenne.de/webradio/channels/90er-hits.m3u</Link>
+	</Sender>
+	<Sender>
+		Antenne Classic Rock
+		<Link>http://www.antenne.de/webradio/channels/classic-rock-live.m3u</Link>
+	</Sender>
+	<Sender>
+		Bayern 1 Oberbayern
+		<Link>http://streams.br.de/bayern1obb_2.m3u</Link>
+	</Sender>
+	<Sender>
+		Bayern 2 Sued
+		<Link>http://streams.br.de/bayern2sued_2.m3u</Link>
+	</Sender>
+	<Sender>
+		Bayern 3
+		<Link>http://streams.br.de/bayern3_2.m3u</Link>
+	</Sender>
+	<Sender>
+		BR-KLassik
+		<Link>http://streams.br.de/br-klassik_2.m3u</Link>
+	</Sender>
+	<Sender>
+		B5 aktuell
+		<Link>http://streams.br.de/b5aktuell_2.m3u</Link>
+	</Sender>
+	<Sender>
+		Bayern plus
+		<Link>http://streams.br.de/bayernplus_2.m3u</Link>
+	</Sender>
+	<Sender>
+		Technobase FM
+		<Link>http://www.surfmusik.de/m3u/technobase-fm-dsl%2C6542.m3u</Link>
+	</Sender>
+	<Sender>
+		Munich's hardest Hits
+		<Link>http://www.surfmusik.de/m3u/munich-s-hardest-hits-dsl%2C1513.m3u</Link>
+	</Sender>
+	<Sender>
+		HarderRadio.FM
+		<Link>http://harderradio.de/streamlinks/listen.pls</Link>
+	</Sender>
+	<Sender>
+		Abacus.fm Mzart
+		<Link>https://streaming.radionomy.com/abacusfm-mozart-piano</Link>
+	</Sender>
+	<Sender>
+		Abacus.fm Bach
+		<Link>https://streaming.radionomy.com/abacusfm-bach</Link>
+	</Sender>
+	<Sender>
+		Abacus.fm Beethoven One
+		<Link>https://streaming.radionomy.com/abacusfm-beethoven-one</Link>
+	</Sender>
+	<Sender>
+		
+		<Link></Link>
+	</Sender>
+	<Sender>
+		
+		<Link></Link>
+	</Sender>
+	<Sender>
+		
+		<Link></Link>
+	</Sender>
+	<Sender>
+		
+		<Link></Link>
+	</Sender>
+	<Sender>
+		
+		<Link></Link>
+	</Sender>
+	<Sender>
+		
+		<Link></Link>
+	</Sender>
+  </Radio>
 </Senderliste>
