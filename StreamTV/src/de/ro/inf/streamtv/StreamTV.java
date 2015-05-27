@@ -75,7 +75,6 @@ public class StreamTV extends JFrame implements ActionListener{
 		try {
 			pb.start();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

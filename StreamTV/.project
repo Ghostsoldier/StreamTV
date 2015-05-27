@@ -14,4 +14,9 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<dependency>
+    <groupId>uk.co.caprica</groupId>
+    <artifactId>vlcj</artifactId>
+    <version>3.7.0</version>
+</dependency>
 </projectDescription>
