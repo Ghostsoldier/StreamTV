@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<senderliste>
+	<sender>
+		<type>TV</type>
+		<name>ARD</name>
+		<link resolution="LD">http://daserste_live-lh.akamaihd.net/i/daserste_de@91204/master.m3u8</link>
+		<link resolution="HD">http://ardhdteststream.de/teststream.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>ZDF</name>
+		<link resolution="LD">http://zdf_hds_de-f.akamaihd.net/i/de14_v1@147090/master.m3u8</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Bayern 3</name>
+		<link bitrate="128">http://streams.br.de/bayern3_2.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Antenne Bayern</name>
+		<link bitrate="128">http://www.antenne.de/webradio/antenne.m3u</link>
+	</sender>
+</senderliste>

@@ -1,3 +1,4 @@
+<!-- OLD FILE, USE NEW links.xml IN STREAMTV SUBFOLDER! -->
 <?xml version="1.0" encoding="UTF-8"?>
 <Senderliste>
   <Fernsehen>
@@ -220,30 +221,5 @@
 	<Sender>
 		Abacus.fm Beethoven One
 		<Link>https://streaming.radionomy.com/abacusfm-beethoven-one</Link>
-	</Sender>
-	<Sender>
-		
-		<Link></Link>
-	</Sender>
-	<Sender>
-		
-		<Link></Link>
-	</Sender>
-	<Sender>
-		
-		<Link></Link>
-	</Sender>
-	<Sender>
-		
-		<Link></Link>
-	</Sender>
-	<Sender>
-		
-		<Link></Link>
-	</Sender>
-	<Sender>
-		
-		<Link></Link>
-	</Sender>
   </Radio>
 </Senderliste>
