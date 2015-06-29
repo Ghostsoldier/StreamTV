@@ -87,7 +87,8 @@ public class Player {
 	 * @throws IOException 
 	 */
 	public void startStream(String sLink) throws IOException{
-		if(sPathPlayer==null) findPlayerPath();
+		outputkernel.OutputDebugStringA("StreamTV: "+sPathPlayer);
+		if(sPathPlayer==null) readPathFromFile();
 		try {
 			if(process!=null){process.destroy();}
 		} catch (Exception e) {
@@ -106,16 +107,12 @@ public class Player {
 	 */
 	public void readPathFromFile() throws FileNotFoundException, IOException{
 	    try(BufferedReader br = new BufferedReader(new FileReader("path.txt"))) {
-	        StringBuilder sb = new StringBuilder();
-	        String line = br.readLine();
-
-	        while (line != null) {
-	            sb.append(line);
-	            sb.append(System.lineSeparator());
-	            line = br.readLine();
-	        }
-	        String everything = sb.toString();
+	        String everything = br.readLine();
+	        sPathPlayer = everything;
 	        outputkernel.OutputDebugStringA(everything);		
+	    }
+	    catch(FileNotFoundException notfound) {
+	    	findPlayerPath();
 	    }
 	}
 	/**

@@ -39,12 +39,12 @@ public class StreamTV extends JFrame implements ActionListener{
 		JTabbedPane switchTab = new JTabbedPane();
 		JPanel panelFernsehen = new JPanel(new GridLayout(0,2));
 		JPanel panelRadio = new JPanel(new GridLayout(0,2));
-		JPanel panelSettings = new JPanel();
+		//JPanel panelSettings = new JPanel();
 		switchTab.addTab("Fernsehen", null, panelFernsehen,
                 "Fernsehsender");
 		switchTab.addTab("Radio", null, panelRadio,
                 "Radiosender");
-		switchTab.addTab("Einstellungen", null, panelSettings);
+		//switchTab.addTab("Einstellungen", null, panelSettings);
 		mainFrame.getContentPane().add(switchTab, BorderLayout.CENTER);
 		
 		StreamTV player = new StreamTV();
