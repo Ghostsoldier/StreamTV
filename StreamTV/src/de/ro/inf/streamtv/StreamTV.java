@@ -1,21 +1,21 @@
 package de.ro.inf.streamtv;
 
-import javax.swing.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random; 
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+
 import java.awt.Component;
-import java.awt.FlowLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
 import java.io.IOException;
 
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-
-import net.miginfocom.swing.MigLayout;
 
 
 public class StreamTV extends JFrame implements ActionListener{
@@ -25,32 +25,46 @@ public class StreamTV extends JFrame implements ActionListener{
 	//private static JButton btnZdf; 
 	//private JFrame mainFrame;
 	protected String sActionListenerDummy ="";
+	Sender sender = new Sender();
+	TVSender tvSender = new TVSender();
+	RadioSender radioSender = new RadioSender();
+	Player player = new Player();
 	
 
 
 	public static void main(String[] args) throws IOException {
 		
 		JFrame mainFrame = new JFrame("StreamTV");
-		mainFrame.setSize(500,500);
+		mainFrame.setSize(700,700);
 		JTabbedPane switchTab = new JTabbedPane();
-		JPanel panelFernsehen = new JPanel();
-		JPanel panelRadio = new JPanel();
+		JPanel panelFernsehen = new JPanel(new GridLayout(0,2));
+		JPanel panelRadio = new JPanel(new GridLayout(0,2));
+		JPanel panelSettings = new JPanel();
 		switchTab.addTab("Fernsehen", null, panelFernsehen,
                 "Fernsehsender");
 		switchTab.addTab("Radio", null, panelRadio,
                 "Radiosender");
+		switchTab.addTab("Einstellungen", null, panelSettings);
 		mainFrame.getContentPane().add(switchTab, BorderLayout.CENTER);
-		JButton btnArd = new JButton("ARD");
-		btnArd.setName("btnArd");
-		panelFernsehen.add(btnArd);
-		JButton btnZdf = new JButton("ZDF");
-		btnZdf.setName("btnZdf");
-		panelFernsehen.add(btnZdf);
 		
+		StreamTV player = new StreamTV();
+		Sender sender = new Sender();
+		TVSender tvSender = new TVSender();
+		RadioSender radioSender = new RadioSender();
 		
-		StreamTV test = new StreamTV();
-		btnArd.addActionListener(test);
-		btnZdf.addActionListener(test);
+		JButton[] SenderButtons = new JButton[sender.getXMLLength()];
+		
+		for(int i=0; i<SenderButtons.length; i++){
+			SenderButtons[i] = new JButton(sender.getName(i));
+			SenderButtons[i].setName(String.valueOf(i));
+			if(sender.getType(i).equals("TV")) panelFernsehen.add(SenderButtons[i]);
+			else if(sender.getType(i).equals("Radio")) panelRadio.add(SenderButtons[i]);
+			SenderButtons[i].addActionListener(player);
+			
+		}
+		
+		//btnArd.addActionListener(player);
+		//btnZdf.addActionListener(player);
 		
 
 		mainFrame.setVisible(true);
@@ -59,21 +73,22 @@ public class StreamTV extends JFrame implements ActionListener{
 		//pb.start();
 		
 	}
-	
+
+	/**
+	 * reads the performed Action, in this case JButton-click
+	 */
 	public void actionPerformed(ActionEvent event) {
-		ProcessBuilder pb = new ProcessBuilder();
 		System.out.println((((Component) event.getSource()).getName()));
-		switch((((Component) event.getSource()).getName())) {
-			case "btnArd" :
-				pb = new ProcessBuilder("C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe", "http://daserste_live-lh.akamaihd.net/i/daserste_de@91204/master.m3u8");
-				break;
-			case "btnZdf" : 
-				pb = new ProcessBuilder("C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe", "http://zdf_hds_de-f.akamaihd.net/i/de14_v1@147090/master.m3u8");
-				break;
-			
+		int senderCount =Integer.parseInt((((Component) event.getSource()).getName()));
+		String streamLink = "";
+		if(sender.getType(senderCount).equals("TV")) {
+			streamLink=tvSender.getLink(senderCount)[1];
+		}
+		else if(sender.getType(senderCount).equals("Radio")) {
+			streamLink=radioSender.getLink(senderCount)[1];
 		}
 		try {
-			pb.start();
+			player.startStream(streamLink);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
