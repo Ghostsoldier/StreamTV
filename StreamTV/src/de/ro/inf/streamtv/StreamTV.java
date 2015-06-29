@@ -55,7 +55,12 @@ public class StreamTV extends JFrame implements ActionListener{
 		JButton[] SenderButtons = new JButton[sender.getXMLLength()];
 		
 		for(int i=0; i<SenderButtons.length; i++){
-			SenderButtons[i] = new JButton(sender.getName(i));
+			if (sender.getType(i).equals("TV")) {
+				SenderButtons[i] = new JButton(sender.getName(i) + " (" + tvSender.getLink(i)[0] + ")");
+			}
+			else if (sender.getType(i).equals("Radio")) {
+				SenderButtons[i] = new JButton(sender.getName(i) + " (" + radioSender.getLink(i)[0] + " kbit)");
+			}
 			SenderButtons[i].setName(String.valueOf(i));
 			if(sender.getType(i).equals("TV")) panelFernsehen.add(SenderButtons[i]);
 			else if(sender.getType(i).equals("Radio")) panelRadio.add(SenderButtons[i]);
