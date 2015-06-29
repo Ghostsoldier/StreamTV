@@ -47,6 +47,7 @@ public class Player {
 	
 	/**
 	 * Windows debug output
+	 * for debug only
 	 */
 	public interface Kernel32 extends Library
 	{
@@ -56,10 +57,13 @@ public class Player {
 	
 	
 	/**
-	 * Sreaches the Vlc directory
+	 * Opens JFileChooser for User to select the vlc path
 	 * @return true, if player is found
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
+	 * @throws UnsupportedEncodingException 
 	 */
-	public boolean findPlayerPath() {
+	public boolean findPlayerPath() throws UnsupportedEncodingException, FileNotFoundException, IOException {
 		try {
 			File myFile;
 			FileSelector.showOpenDialog(FileSelector);
@@ -68,6 +72,7 @@ public class Player {
 			myFile = FileSelector.getSelectedFile();
 			sPathPlayer = myFile.getAbsolutePath();
 			outputkernel.OutputDebugStringA(sPathPlayer);
+			writePathToFile();
 			return true;
 		} catch (HeadlessException e) {
 			outputkernel.OutputDebugStringA(e.toString());
@@ -76,7 +81,7 @@ public class Player {
 	}
 	
 	/**
-	 * 
+	 *  Starts an instance of vlc player with given link
 	 * 
 	 * @param sLink is the Streamlink, or filepath for vlc
 	 * @throws IOException 
@@ -93,9 +98,14 @@ public class Player {
 		outputkernel.OutputDebugStringA("StreamTV: Stream starting");
 	}
 	
-	
+	/**
+	 *   Searches for the file "path.txt" and reads the vlc path if existing
+	 *   
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	public void readPathFromFile() throws FileNotFoundException, IOException{
-	    try(BufferedReader br = new BufferedReader(new FileReader("Path.txt"))) {
+	    try(BufferedReader br = new BufferedReader(new FileReader("path.txt"))) {
 	        StringBuilder sb = new StringBuilder();
 	        String line = br.readLine();
 
@@ -108,10 +118,15 @@ public class Player {
 	        outputkernel.OutputDebugStringA(everything);		
 	    }
 	}
-	
+	/**
+	 * Used to save vlc path to path.txt in the same directory; overwrites of already existing
+	 * @throws UnsupportedEncodingException
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	public void writePathToFile() throws UnsupportedEncodingException, FileNotFoundException, IOException {
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream("Path.txt"), "utf-8"))) {
+                new FileOutputStream("path.txt"), "utf-8"))) {
         			writer.write(sPathPlayer);
 		}
 		outputkernel.OutputDebugStringA(sPathPlayer);	
