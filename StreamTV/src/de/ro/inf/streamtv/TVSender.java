@@ -37,7 +37,7 @@ public class TVSender extends Sender {
 		
 		for (int i = 0; i < eElement.getElementsByTagName("link").getLength(); i++) {
 		
-			//linkArrayList.add(((Element) eElement.getElementsByTagName("link").item(i)).getAttribute("resolution"));
+			linkArrayList.add(((Element) eElement.getElementsByTagName("link").item(i)).getAttribute("resolution"));
 		
 			linkArrayList.add(eElement.getElementsByTagName("link").item(i).getTextContent());
 		

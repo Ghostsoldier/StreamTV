@@ -37,7 +37,7 @@ public class RadioSender extends Sender {
 		
 		for (int i = 0; i < eElement.getElementsByTagName("link").getLength(); i++) {
 			
-			//linkArrayList.add(((Element) eElement.getElementsByTagName("link").item(i)).getAttribute("bitrate"));
+			linkArrayList.add(((Element) eElement.getElementsByTagName("link").item(i)).getAttribute("bitrate"));
 			
 			linkArrayList.add(eElement.getElementsByTagName("link").item(i).getTextContent());
 			
