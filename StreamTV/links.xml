@@ -4,12 +4,101 @@
 		<type>TV</type>
 		<name>ARD</name>
 		<link resolution="LD">http://daserste_live-lh.akamaihd.net/i/daserste_de@91204/master.m3u8</link>
-		<link resolution="HD">http://ardhdteststream.de/teststream.m3u8</link>
 	</sender>
 	<sender>
 		<type>TV</type>
 		<name>ZDF</name>
 		<link resolution="LD">http://zdf_hds_de-f.akamaihd.net/i/de14_v1@147090/master.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>BBC World</name>
+		<link resolution="LD">http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_world/ls_satlink/b_,264,528,828,.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>CNN International</name>
+		<link resolution="LD">http://wpc.c1a9.edgecastcdn.net/hls-live/20C1A9/cnn/ls_satlink/b_528.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>Arirang</name>
+		<link resolution="LD">http://worldlive-ios.arirang.co.kr/arirang/arirangtvworldios.mp4.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>Arirang</name>
+		<link resolution="LD">http://worldlive-ios.arirang.co.kr/arirang/arirangtvworldios.mp4.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>ABC News</name>
+		<link resolution="LD">http://abclive.abcnews.com/i/abc_live4@136330/master.m3u8?b=500,300,700,900,1200</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>CNBC</name>
+		<link resolution="LD">http://origin2.live.web.tv.streamprovider.net/streams/3bc166ba3776c04e987eb242710e75c0/index.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>RT English</name>
+		<link resolution="LD">http://odna.octoshape.net/f3f5m2v4/cds/smil:ch1_auto.smil/playlist.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>RT Documentaries</name>
+		<link resolution="LD">http://odna.octoshape.net/f3f5m2v4/cds/smil:ch5_auto.smil/playlist.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name> RT America</name>
+		<link resolution="LD">http://odna.octoshape.net/f3f5m2v4/cds/smil:ch4_auto.smil/playlist.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>Reuters</name>
+		<link resolution="LD">http://37.58.85.156/rlo001/ngrp:rlo001.stream_all/playlist.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>Bloomberg</name>
+		<link resolution="LD">http://live.bltvios.com.edgesuite.net/tv/us/master.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>eNCA</name>
+		<link resolution="LD">http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/enca/ls_satlink/b_,264,528,828,.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>Sky News International</name>
+		<link resolution="LD">http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/skynews/ls_satlink/b_,264,528,828,.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>Sky News International</name>
+		<link resolution="LD">http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/skynews/ls_satlink/b_,264,528,828,.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>Deutsche Welle</name>
+		<link resolution="LD">http://www.metafilegenerator.de/DWelle/tv/ios/master.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name> Deutsche Welle North America</name>
+		<link resolution="LD">http://www.metafilegenerator.de/DWelle/tv-northamerica/ios/master.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>CCTV News</name>
+		<link resolution="LD">http://origin2.live.web.tv.streamprovider.net/streams/877ba7a57aa68fd898b838f58d51a69f/index.m3u8</link>
+	</sender>
+	<sender>
+		<type>TV</type>
+		<name>Tagesschau 24</name>
+		<link resolution="LD">http://tagesschau-lh.akamaihd.net/i/tagesschau_1@119231/master.m3u8</link>
 	</sender>
 	<sender>
 		<type>Radio</type>
@@ -21,4 +110,110 @@
 		<name>Antenne Bayern</name>
 		<link bitrate="128">http://www.antenne.de/webradio/antenne.m3u</link>
 	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Rock Antenne</name>
+		<link bitrate="128">http://www.rockantenne.de/webradio/rockantenne.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Antenne Oldies but Goldies</name>
+		<link bitrate="128">http://www.antenne.de/webradio/channels/oldies-but-goldies.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Antenne Chillout</name>
+		<link bitrate="128">http://www.antenne.de/webradio/channels/chillout.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Antenne Top 40</name>
+		<link bitrate="128">http://www.antenne.de/webradio/channels/top-40.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Antenne New Hits</name>
+		<link bitrate="128">http://www.antenne.de/webradio/channels/new-hits.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Antenne Lovesongs</name>
+		<link bitrate="128">http://www.antenne.de/webradio/channels/lovesongs.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Antenne Black Beatz</name>
+		<link bitrate="128">http://www.antenne.de/webradio/channels/black-beatz.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Antenne 80-er Kulthits</name>
+		<link bitrate="128">http://www.antenne.de/webradio/channels/80er-kulthits.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Antenne 90-er Hits</name>
+		<link bitrate="128">http://www.antenne.de/webradio/channels/90er-hits.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Antenne Classic Rock</name>
+		<link bitrate="128">http://www.antenne.de/webradio/channels/classic-rock-live.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Bayern 1 Oberbayern</name>
+		<link bitrate="128">http://streams.br.de/bayern1obb_2.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Bayern 2 Sued</name>
+		<link bitrate="128">http://streams.br.de/bayern2sued_2.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>BR-Klassik</name>
+		<link bitrate="128">http://streams.br.de/br-klassik_2.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>B5 aktuell</name>
+		<link bitrate="128">http://streams.br.de/b5aktuell_2.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Bayern plus</name>
+		<link bitrate="128">http://streams.br.de/bayernplus_2.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Technobase FM</name>
+		<link bitrate="128">http://www.surfmusik.de/m3u/technobase-fm-dsl%2C6542.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Munich's hardest Hits</name>
+		<link bitrate="128">http://www.surfmusik.de/m3u/munich-s-hardest-hits-dsl%2C1513.m3u</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>HarderRadio.FM</name>
+		<link bitrate="128">http://harderradio.de/streamlinks/listen.pls</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Abacus.fm Mozart</name>
+		<link bitrate="128">https://streaming.radionomy.com/abacusfm-mozart-piano</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Abacus.fm Bach</name>
+		<link bitrate="128">https://streaming.radionomy.com/abacusfm-bach</link>
+	</sender>
+	<sender>
+		<type>Radio</type>
+		<name>Abacus.fm Beethoven One</name>
+		<link bitrate="128">https://streaming.radionomy.com/abacusfm-beethoven-one</link>
+	</sender>
+
 </senderliste>
