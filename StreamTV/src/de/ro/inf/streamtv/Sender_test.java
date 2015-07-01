@@ -34,7 +34,7 @@ public class Sender_test {
 		// Tests if every channel in links.xml has either TV or Radio as type
 		for (int i = 0; i < Sender.getXMLLength(); i++) {
 
-			assertTrue("Wrong channel type on number" + i,
+			assertTrue("Wrong channel type on number " + i,
 					(Sender.getType(i).equals("TV") || Sender.getType(i).equals("Radio")));
 
 		}
