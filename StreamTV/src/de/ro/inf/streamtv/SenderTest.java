@@ -21,12 +21,6 @@ public class SenderTest {
 	 */
 	public static void main(String[] args) {
 
-		/*
-		 * Test class for understanding the use of the methods. Important:
-		 * Channels are distinct in their position within the channel list,
-		 * which starts at 0 and ends at getXMLLength(), not with their name
-		 */
-
 		System.out.println("TV-Sender:\n--------------------------------------------------");
 
 		for (int i = 0; i < Sender.getXMLLength(); i++) {
