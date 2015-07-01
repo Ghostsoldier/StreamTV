@@ -7,8 +7,7 @@ import java.util.Arrays;
  * RadioSender work, and also to get a nicely parsed output of the links.xml
  * file in the console. Note: Channels are distinct in their position within the
  * channel list, which starts at 0 and ends at getXMLLength(), not with their
- * THIS IS NOT A JUNIT CLASS! IT IS ONLY FOR COMPREHENSION.
- * name
+ * name. THIS IS NOT A JUNIT CLASS! IT IS ONLY FOR COMPREHENSION.
  * 
  * @author Nico Welles
  *
