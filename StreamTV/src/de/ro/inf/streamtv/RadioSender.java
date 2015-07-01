@@ -11,17 +11,18 @@ import org.w3c.dom.NodeList;
 public class RadioSender extends Sender {
 	
 	/**
-	 * An array of all the links of the channel with their resolution (for TV) or bitrate (for radio) in front
-	 * Example:	TV:		[LD, http://daserste.../master.m3u8, HD, http://ard.../teststream.m3u8]
-	 * 			Radio:	[128, http://streams.br.de/bayern3_2.m3u]
+	 * An array of all the links of the channel with their bitrate in front
+	 * Example:	[128, http://streams.br.de/bayern3_2.m3u]
 	 */
 	static String[] link;
 	
 	/**
-	 * Returns all the links of the channel with their resolution (for TV) or bitrate (for radio) in front. Array length is made variable 
-	 * through first using ArrayList, adding content, and then converting to Array
-	 * @param channelNumber The number of the channel in the channel list. The maximum channel number is found through getXMLLength()
-	 * @return An array of links with their bitrate in front
+	 * Returns all the links of the channel with their bitrate in front. Array length is made variable 
+	 * through first using ArrayList, adding content, and then converting to Array. At the moment this is 
+	 * not necessary because of a lack of publicly acessible high quality radio stream links, but has been left in because
+	 * it is still functional and allows reintroducing multiple links per channel in future updates.
+	 * @param channelNumber The number of the channel in the channel list. The minimum number is 0, maximum number is found through getXMLLength()
+	 * @return An array of links with their bitrate in front, at the moment only the first link and bitrate is used by the GUI
 	 */
 	public static String[] getLink(int channelNumber) {
 		
@@ -35,6 +36,7 @@ public class RadioSender extends Sender {
 		
 		Element eElement = (Element) nNode;
 		
+		//Goes through all <link> elements in the links.xml file, adding its bitrate and the link itself to the ArrayList
 		for (int i = 0; i < eElement.getElementsByTagName("link").getLength(); i++) {
 			
 			linkArrayList.add(((Element) eElement.getElementsByTagName("link").item(i)).getAttribute("bitrate"));
@@ -43,8 +45,8 @@ public class RadioSender extends Sender {
 			
 		}
 		
+		//Converting the ArrayList to Array to be returned by the method
 		link = new String[linkArrayList.size()];
-		
 		linkArrayList.toArray(link);
 		
 		return link;
