@@ -62,8 +62,9 @@ public class StreamTV extends JFrame implements ActionListener {
 		RadioSender radioSender = new RadioSender();
 
 		// error for corrupted list.xml
+		// prepare for redownload
 		if (sender.getXMLLength() == 0) {
-			JButton errorButton = new JButton("Corrupted file, click here to redownload.");
+			JButton errorButton = new JButton("Corrupted file, click here to redownload (app closes after finish).");
 			switchTab.remove(panelFernsehen);
 			switchTab.remove(panelRadio);
 			JPanel errorPanel = new JPanel();
@@ -73,8 +74,8 @@ public class StreamTV extends JFrame implements ActionListener {
 			errorButton.addActionListener(player);
 		}
 
+		// add buttons to GUI
 		JButton[] SenderButtons = new JButton[sender.getXMLLength()];
-
 		for (int i = 0; i < SenderButtons.length; i++) {
 			if (sender.getType(i).equals("TV")) {
 				SenderButtons[i] = new JButton(sender.getName(i) + " (" + tvSender.getLink(i)[0] + ")");
@@ -94,16 +95,18 @@ public class StreamTV extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * reads the performed Action, in this case JButton-click the link from
-	 * RadioSender and TvSender is sent to Player to start the stream
+	 * Reads the performed Action, in this case JButton-click the link from
+	 * RadioSender and TvSender is sent to Player to start the stream. If
+	 * links.xml is corrupt, then redownloads it.
 	 */
 	public void actionPerformed(ActionEvent event) {
 		System.out.println((((Component) event.getSource()).getName()));
 		String streamLink = "";
-		//links.xml error, redownload
-		if((((Component) event.getSource()).getName())=="errorLinks"){
+		// links.xml error, redownload and close
+		if ((((Component) event.getSource()).getName()) == "errorLinks") {
 			try {
-				URL website = new URL("https://raw.githubusercontent.com/Ghostsoldier/StreamTV/master/StreamTV/links.xml");
+				URL website = new URL(
+						"https://raw.githubusercontent.com/Ghostsoldier/StreamTV/master/StreamTV/links.xml");
 				ReadableByteChannel rbc = Channels.newChannel(website.openStream());
 				FileOutputStream fos = new FileOutputStream("links.xml");
 				fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
@@ -120,7 +123,7 @@ public class StreamTV extends JFrame implements ActionListener {
 			}
 			System.exit(0);
 		}
-		
+
 		int senderCount = Integer.parseInt((((Component) event.getSource()).getName()));
 		if (sender.getType(senderCount).equals("TV")) {
 			streamLink = tvSender.getLink(senderCount)[1];
