@@ -34,13 +34,17 @@ public class RadioSender extends Sender {
 	 *            The number of the channel in the channel list. The minimum
 	 *            number is 0, maximum number is found through getXMLLength()
 	 * @return An array of links with their bitrate in front, at the moment only
-	 *         the first link and bitrate is used by the GUI
+	 *         the first link and bitrate is used by the GUI. Null if error.
 	 */
 	public static String[] getLink(int channelNumber) {
 
 		List<String> linkArrayList = new ArrayList<String>();
 
 		Document doc = parseXML();
+
+		if (doc == null) {
+			return null;
+		}
 
 		NodeList nList = doc.getElementsByTagName("sender");
 

@@ -36,13 +36,18 @@ public class TVSender extends Sender {
 	 *            The number of the channel in the channel list. The minimum
 	 *            number is 0, maximum number is found through getXMLLength()
 	 * @return An array of links with their resolution in front, at the moment
-	 *         only the first link and resolution is used by the GUI
+	 *         only the first link and resolution is used by the GUI. Null if
+	 *         error.
 	 */
 	public static String[] getLink(int channelNumber) {
 
 		List<String> linkArrayList = new ArrayList<String>();
 
 		Document doc = parseXML();
+		 
+		if (doc == null) {
+			return null;
+		}
 
 		NodeList nList = doc.getElementsByTagName("sender");
 

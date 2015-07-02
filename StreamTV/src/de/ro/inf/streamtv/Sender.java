@@ -35,7 +35,8 @@ public class Sender {
 	/**
 	 * The method to parse the XML file into a Document that can be processed
 	 * 
-	 * @return The parsed channel links.xml file as a document
+	 * @return The parsed channel links.xml file as a document. Document = null
+	 *         if links.xml not found.
 	 * @throws ParserConfigurationException
 	 * @throws FileNotFoundException
 	 * @throws SAXException
@@ -62,7 +63,7 @@ public class Sender {
 			doc = dBuilder.parse(new FileInputStream("links.xml"));
 
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			return null;
 		} catch (SAXException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
