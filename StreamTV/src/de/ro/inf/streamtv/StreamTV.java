@@ -53,15 +53,18 @@ public class StreamTV extends JFrame implements ActionListener {
 		TVSender tvSender = new TVSender();
 		RadioSender radioSender = new RadioSender();
 
+		// error for corrupted list.xml
+		if (sender.getXMLLength() == 0) {
+			panelFernsehen.add(new JButton("links.xml is corrupted, please download it again."));
+		}
+
 		JButton[] SenderButtons = new JButton[sender.getXMLLength()];
 
 		for (int i = 0; i < SenderButtons.length; i++) {
 			if (sender.getType(i).equals("TV")) {
-				SenderButtons[i] = new JButton(sender.getName(i) + " ("
-						+ tvSender.getLink(i)[0] + ")");
+				SenderButtons[i] = new JButton(sender.getName(i) + " (" + tvSender.getLink(i)[0] + ")");
 			} else if (sender.getType(i).equals("Radio")) {
-				SenderButtons[i] = new JButton(sender.getName(i) + " ("
-						+ radioSender.getLink(i)[0] + " kbit)");
+				SenderButtons[i] = new JButton(sender.getName(i) + " (" + radioSender.getLink(i)[0] + " kbit)");
 			}
 			SenderButtons[i].setName(String.valueOf(i));
 			if (sender.getType(i).equals("TV"))
@@ -81,8 +84,7 @@ public class StreamTV extends JFrame implements ActionListener {
 	 */
 	public void actionPerformed(ActionEvent event) {
 		System.out.println((((Component) event.getSource()).getName()));
-		int senderCount = Integer.parseInt((((Component) event.getSource())
-				.getName()));
+		int senderCount = Integer.parseInt((((Component) event.getSource()).getName()));
 		String streamLink = "";
 		if (sender.getType(senderCount).equals("TV")) {
 			streamLink = tvSender.getLink(senderCount)[1];
