@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.WindowConstants;
 
 import java.awt.Component;
 import java.awt.GridLayout;
@@ -44,6 +45,7 @@ public class StreamTV extends JFrame implements ActionListener {
 	public static void main(String[] args) throws IOException {
 
 		JFrame mainFrame = new JFrame("StreamTV");
+		mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		mainFrame.setSize(700, 700);
 		JTabbedPane switchTab = new JTabbedPane();
 		JPanel panelFernsehen = new JPanel(new GridLayout(0, 2));
