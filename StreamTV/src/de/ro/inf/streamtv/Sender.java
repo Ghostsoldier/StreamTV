@@ -82,11 +82,15 @@ public class Sender {
 	 * The method for counting the amount of channels of both types ("TV" and
 	 * "Radio")
 	 * 
-	 * @return The number of channels
+	 * @return The number of channels. 0 if links.xml not found in parseXML().
 	 */
 	public static int getXMLLength() {
 
 		Document doc = parseXML();
+		
+		if (doc == null) {
+			return 0;
+		}
 
 		NodeList nList = doc.getElementsByTagName("sender");
 
