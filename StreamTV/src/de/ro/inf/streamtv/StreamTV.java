@@ -61,7 +61,7 @@ public class StreamTV extends JFrame implements ActionListener {
 
 		// error for corrupted list.xml
 		if (sender.getXMLLength() == 0) {
-			JButton errorButton = new JButton("links.xml is corrupted, please download it again.");
+			JButton errorButton = new JButton("corrupted file, click here and restart the application after a few seconds.");
 			errorButton.setName("errorLinks");
 			panelFernsehen.add(errorButton);
 			errorButton.addActionListener(player);
