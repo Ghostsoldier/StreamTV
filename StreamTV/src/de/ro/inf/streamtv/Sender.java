@@ -87,7 +87,7 @@ public class Sender {
 	public static int getXMLLength() {
 
 		Document doc = parseXML();
-		
+
 		if (doc == null) {
 			return 0;
 		}
