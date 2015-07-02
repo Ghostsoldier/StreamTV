@@ -63,9 +63,13 @@ public class StreamTV extends JFrame implements ActionListener {
 
 		// error for corrupted list.xml
 		if (sender.getXMLLength() == 0) {
-			JButton errorButton = new JButton("corrupted file, click here and restart the application after a few seconds.");
+			JButton errorButton = new JButton("Corrupted file, click here to redownload.");
+			switchTab.remove(panelFernsehen);
+			switchTab.remove(panelRadio);
+			JPanel errorPanel = new JPanel();
 			errorButton.setName("errorLinks");
-			panelFernsehen.add(errorButton);
+			errorPanel.add(errorButton);
+			switchTab.addTab("Error", null, errorPanel);
 			errorButton.addActionListener(player);
 		}
 
@@ -114,7 +118,7 @@ public class StreamTV extends JFrame implements ActionListener {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			return;
+			System.exit(0);
 		}
 		
 		int senderCount = Integer.parseInt((((Component) event.getSource()).getName()));
