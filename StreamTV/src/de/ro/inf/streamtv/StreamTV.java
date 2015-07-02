@@ -11,7 +11,13 @@ import javax.swing.JTabbedPane;
 import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
 
 /**
  * Main Class containing he GUI and the main program functions
@@ -55,7 +61,10 @@ public class StreamTV extends JFrame implements ActionListener {
 
 		// error for corrupted list.xml
 		if (sender.getXMLLength() == 0) {
-			panelFernsehen.add(new JButton("links.xml is corrupted, please download it again."));
+			JButton errorButton = new JButton("links.xml is corrupted, please download it again.");
+			errorButton.setName("errorLinks");
+			panelFernsehen.add(errorButton);
+			errorButton.addActionListener(player);
 		}
 
 		JButton[] SenderButtons = new JButton[sender.getXMLLength()];
@@ -84,8 +93,29 @@ public class StreamTV extends JFrame implements ActionListener {
 	 */
 	public void actionPerformed(ActionEvent event) {
 		System.out.println((((Component) event.getSource()).getName()));
-		int senderCount = Integer.parseInt((((Component) event.getSource()).getName()));
 		String streamLink = "";
+		//links.xml error, redownload
+		if((((Component) event.getSource()).getName())=="errorLinks"){
+			try {
+				URL website = new URL("https://raw.githubusercontent.com/Ghostsoldier/StreamTV/master/StreamTV/links.xml");
+				ReadableByteChannel rbc = Channels.newChannel(website.openStream());
+				FileOutputStream fos = new FileOutputStream("links.xml");
+				fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+				fos = null;
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return;
+		}
+		
+		int senderCount = Integer.parseInt((((Component) event.getSource()).getName()));
 		if (sender.getType(senderCount).equals("TV")) {
 			streamLink = tvSender.getLink(senderCount)[1];
 		} else if (sender.getType(senderCount).equals("Radio")) {

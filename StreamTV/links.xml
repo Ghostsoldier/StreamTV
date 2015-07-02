@@ -27,11 +27,6 @@
 	</sender>
 	<sender>
 		<type>TV</type>
-		<name>Arirang</name>
-		<link resolution="LD">http://worldlive-ios.arirang.co.kr/arirang/arirangtvworldios.mp4.m3u8</link>
-	</sender>
-	<sender>
-		<type>TV</type>
 		<name>ABC News</name>
 		<link resolution="LD">http://abclive.abcnews.com/i/abc_live4@136330/master.m3u8?b=500,300,700,900,1200</link>
 	</sender>
@@ -52,7 +47,7 @@
 	</sender>
 	<sender>
 		<type>TV</type>
-		<name> RT America</name>
+		<name>RT America</name>
 		<link resolution="LD">http://odna.octoshape.net/f3f5m2v4/cds/smil:ch4_auto.smil/playlist.m3u8</link>
 	</sender>
 	<sender>
